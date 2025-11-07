@@ -1,162 +1,224 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ABHISHEEK X MOD — Generator</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ABHISHEEK X MODS — Generator</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --accent:#00f0ff;
-  --accent2:#00f0c6;
-  --accent3:#00b7ff;
-  --bg:#020518;
-  --card:#021122;
+:root {
+  --accent: #00eaff;
+  --accent2: #00ffc8;
+  --bg: #000010;
+  --card: #021122;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:radial-gradient(circle at top,#03102b,#010313);
-  color:#d9f8ff;
-  font-family:'Poppins',sans-serif;
-  overflow-x:hidden;
+body {
+  background: radial-gradient(circle at top, #000018, #000010);
+  color: var(--accent);
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
 }
 
-/* ✅ Container */
-.container{max-width:980px;margin:auto;padding:17px;text-align:center}
-
-/* ✅ Logo + Title */
-.logo-box{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  margin-top:40px;
+/* ✅ LOADING SCREEN */
+#accessScreen {
+  position: fixed;
+  inset: 0;
+  background: #010416;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.6s;
+  z-index: 9999;
 }
-.logo-box img{
-  width:150px;
-  height:150px;
-  object-fit:contain;
-  filter:drop-shadow(0 0 25px var(--accent3));
-  margin-bottom:10px;
+#accessScreen img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  animation: glow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 25px #00eaff);
 }
-.logo-box h1{
-  font-family:'Orbitron',sans-serif;
-  font-size:28px;
-  letter-spacing:4px;
-  color:var(--accent);
-  text-shadow:0 0 20px var(--accent);
+#accessScreen h1 {
+  margin-top: 25px;
+  font-size: 30px;
+  color: var(--accent);
+  text-shadow: 0 0 25px var(--accent);
+  letter-spacing: 4px;
 }
-
-/* ✅ Hero */
-.hero{text-align:center;margin-top:30px}
-.hero .title{
-  font-family:'Orbitron';
-  font-size:32px;
-  color:var(--accent);
-  letter-spacing:3px;
-  margin-bottom:8px;
+#accessScreen p {
+  margin-top: 12px;
+  color: #99dfff;
+  font-size: 14px;
 }
-
-/* ✅ Loader */
-.loader-wrap{margin:10px 0;text-align:center;opacity:0;transition:.4s}
-.ring{width:90px;height:90px;border-radius:50%;border:6px solid rgba(255,255,255,0.06);margin:auto;display:flex;justify-content:center;align-items:center}
-.arc{width:60px;height:60px;border-radius:50%;border:6px solid transparent;border-top-color:var(--accent);animation:spin 1.6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* ✅ Panel */
-.panel{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(0,255,255,0.2);
-  padding:16px;border-radius:12px;margin:25px 0;
-  backdrop-filter:blur(6px);
-  box-shadow:0 0 25px #003b52;
-}
-.panel .heading{
-  font-family:'Orbitron';
-  color:var(--accent);
-  margin-bottom:6px;
+@keyframes glow {
+  from { filter: drop-shadow(0 0 10px #0030ff); }
+  to { filter: drop-shadow(0 0 38px #00eaff); }
 }
 
-/* ✅ Controls */
-.controls{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:10px;
+/* ✅ HEADER */
+.header {
+  margin-top: 40px;
+  text-align: center;
 }
-select,button{
-  border-radius:8px;
-  padding:12px;
-  border:none;
-  font-weight:600;
+.header img {
+  width: 110px;
+  filter: drop-shadow(0 0 25px var(--accent));
 }
-select{
-  background:#02121f;
-  color:#cfffff;
-  border:1px solid rgba(0,255,255,0.3);
-}
-button{
-  background:linear-gradient(90deg,var(--accent2),var(--accent));
-  color:#021018;
-  cursor:pointer;
+.header h1 {
+  color: var(--accent);
+  font-size: 28px;
+  letter-spacing: 3px;
+  text-shadow: 0 0 15px var(--accent);
 }
 
-/* ✅ Section */
-.section-box{
-  background:var(--card);
-  border:1px solid rgba(0,255,255,0.25);
-  margin:18px 0;
-  padding:18px;
-  border-radius:13px;
-  box-shadow:0 0 25px rgba(0,255,255,0.15);
-  text-align:left;
+/* ✅ TITLE */
+.hero {
+  margin-top: 35px;
 }
-.section-box h2{
-  font-family:'Orbitron';
-  color:var(--accent);
-  font-size:18px;
-  margin-bottom:10px;
+.hero .title {
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px var(--accent);
 }
-.section-box p{color:#d8ffff;line-height:1.55}
-details{
-  background:#000814;
-  border-radius:8px;
-  border:1px solid rgba(0,255,255,0.25);
-  padding:12px;
-  margin:10px 0;
+.hero p {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 8px;
 }
-summary{cursor:pointer;color:var(--accent);font-weight:600}
+
+/* ✅ PANEL */
+.panel {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  border-radius: 12px;
+  margin: 25px auto;
+  width: 85%;
+  padding: 15px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15);
+  text-align: left;
+}
+.panel .heading {
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+
+/* ✅ LOADER */
+.loader-wrap {
+  margin: 15px 0;
+  text-align: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+.ring {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.1);
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.arc {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top-color: var(--accent);
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ✅ BUTTON + SELECT */
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+select, button {
+  border-radius: 8px;
+  padding: 10px 15px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  border: none;
+}
+select {
+  background: #02121f;
+  color: #cfffff;
+  border: 1px solid rgba(0,255,255,0.3);
+}
+button {
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  color: #021018;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+button:hover {
+  box-shadow: 0 0 25px rgba(0,255,255,0.6);
+  transform: scale(1.03);
+}
+
+/* ✅ SECTION BOXES */
+.section-box {
+  background: var(--card);
+  border: 1px solid rgba(0,255,255,0.25);
+  margin: 18px auto;
+  width: 85%;
+  padding: 18px;
+  border-radius: 13px;
+  box-shadow: 0 0 25px rgba(0,255,255,0.15);
+  text-align: left;
+}
+.section-box h2 {
+  color: var(--accent);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.section-box p {
+  color: #d8ffff;
+  font-size: 14px;
+  line-height: 1.55;
+}
 </style>
 </head>
-
 <body>
-<div class="container">
-  <!-- ✅ Logo and Title -->
-  <div class="logo-box">
-    <img src="mkop.png" alt="ABHISHEEK X MOD Logo">
-    <h1>ABHISHEEK X MODS</h1>
-  </div>
 
-  <!-- ✅ Hero -->
+<!-- ✅ LOADING / ACCESS SCREEN -->
+<div id="accessScreen">
+  <img src="mkop.png" alt="Logo">
+  <h1>ACCESS WEBSITE</h1>
+  <p>Tap on screen to continue 🖐️</p>
+</div>
+
+<!-- ✅ MAIN CONTENT -->
+<div id="main" style="display:none;">
+
+  <header class="header">
+    <img src="mkop.png" alt="Logo">
+    <h1>ABHISHEEK X MODS</h1>
+  </header>
+
   <section class="hero">
     <div class="title">ABHISHEEK PREMIUM GENERATE KEY</div>
     <p>Select server → Generate → Wait 20 seconds → Auto Redirect</p>
+
     <div class="loader-wrap" id="loaderWrap">
-      <div class="ring"><div class="arc"></div></div>
+      <div class="ring"><div class="arc" id="arc"></div></div>
     </div>
   </section>
 
-  <!-- ✅ System Log -->
   <div class="panel">
     <div class="heading">SYSTEM.LOG</div>
     <pre id="log">// Ready</pre>
   </div>
 
-  <!-- ✅ Controls -->
   <div class="controls">
     <select id="server">
       <option>Server 1 (Premium)</option>
@@ -166,14 +228,15 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
     <button id="generateBtn">GENERATE ACCESS KEY</button>
   </div>
 
-  <!-- ✅ Info Sections -->
   <div class="section-box">
     <h2>ACCESS PROTOCOL V2.0 🚀</h2>
-    <p>[01] Select server → Press Generate → <b>Wait 20s</b><br>
-    [02] Complete verification if prompted.<br>
-    [03] System validates your device hash.<br>
-    [04] Auto Redirect.<br>
-    [05] Use key where required.</p>
+    <p>
+      [01] Select server → Press Generate → Wait 20s<br>
+      [02] Complete verification if prompted.<br>
+      [03] System validates your device hash.<br>
+      [04] Auto Redirect.<br>
+      [05] Use key where required.
+    </p>
   </div>
 
   <div class="section-box">
@@ -183,39 +246,46 @@ summary{cursor:pointer;color:var(--accent);font-weight:600}
 
   <div class="section-box">
     <h2>FAQS ❓</h2>
-    <details><summary>What is the FF Advance Server?</summary><p>It is a testing server.</p></details>
-    <details><summary>Why isn't my key working?</summary><p>Maybe expired or reused.</p></details>
+    <p>▶ What is the FF Advance Server?<br>
+       ▶ Why isn't my key working?</p>
   </div>
 </div>
 
 <script>
-const SERVER_TARGETS={
-  "Server 1 (Premium)":"https://YOUR-LINK-1",
-  "Server 2 (Stable)":"https://YOUR-LINK-2",
-  "Server 3 (Ultra Fast)":"https://YOUR-LINK-3"
+const SERVER_TARGETS = {
+  "Server 1 (Premium)": "https://YOUR-LINK-1",
+  "Server 2 (Stable)": "https://YOUR-LINK-2",
+  "Server 3 (Ultra Fast)": "https://YOUR-LINK-3"
 };
-const logEl=document.getElementById("log");
-const loader=document.getElementById("loaderWrap");
-const btn=document.getElementById("generateBtn");
-const sel=document.getElementById("server");
 
-function log(txt){logEl.textContent=txt;}
+const accessScreen = document.getElementById("accessScreen");
+const main = document.getElementById("main");
+accessScreen.onclick = () => {
+  accessScreen.style.opacity = "0";
+  setTimeout(() => {
+    accessScreen.style.display = "none";
+    main.style.display = "block";
+  }, 500);
+};
 
-btn.onclick=()=>{
-  btn.disabled=true;
-  loader.style.opacity=1;
-  let t=20;
-  log("// Processing... "+t+"s");
-  const timer=setInterval(()=>{
-    t--;
-    log("// Processing... "+t+"s");
-    if(t<=0){
-      clearInterval(timer);
-      loader.style.opacity=0;
-      btn.disabled=false;
-      window.location.href=SERVER_TARGETS[sel.value]||"#";
+const logEl = document.getElementById('log');
+const loader = document.getElementById('loaderWrap');
+const btn = document.getElementById('generateBtn');
+const sel = document.getElementById('server');
+function log(t){ logEl.textContent = t; }
+
+btn.onclick = () => {
+  btn.disabled = true; loader.style.opacity = 1;
+  let t = 20;
+  log("// Processing... " + t + "s");
+  const x = setInterval(() => {
+    t--; log("// Processing... " + t + "s");
+    if (t <= 0) {
+      clearInterval(x);
+      loader.style.opacity = 0;
+      window.location.href = SERVER_TARGETS[sel.value] || "#";
     }
-  },1000);
+  }, 1000);
 };
 </script>
 </body>
